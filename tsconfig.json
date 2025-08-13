@@ -10,6 +10,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false
   }
 }
