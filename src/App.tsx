@@ -9,7 +9,7 @@ function App() {
     <h1 className="container text-3xl font-bold text-center">
     Hello world!
   </h1>
-  <Button variant="outline">Button</Button>
+  <Button variant="default">Button</Button>
   </>
   )
 }
