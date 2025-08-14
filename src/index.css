@@ -1,158 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+@theme {
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 }
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 263 85% 65%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 263 85% 75%;
-
-    --secondary: 280 15% 95%;
-    --secondary-foreground: 263 85% 35%;
-
-    --muted: 280 15% 95%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 320 85% 65%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 280 15% 90%;
-    --input: 280 15% 90%;
-    --ring: 263 85% 65%;
-
-    --radius: 0.75rem;
-
-    /* Beautiful gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(263 85% 65%), hsl(320 85% 65%), hsl(45 100% 70%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(280 15% 98%));
-    
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-
-    /* Family Tree Design Tokens */
-    --family-male: 210 85% 55%;
-    --family-female: 315 85% 65%;
-    --family-unknown: 40 10% 65%;
-    --family-connection: 25 35% 75%;
-    --family-paternal: 210 50% 35%;
-    --family-maternal: 315 50% 35%;
-    
-    --gradient-family: linear-gradient(135deg, hsl(var(--family-paternal)), hsl(var(--family-maternal)));
-    --gradient-warm: linear-gradient(135deg, hsl(42 45% 85%), hsl(25 35% 88%));
-    
-    --shadow-family-card: 0 4px 20px -4px hsl(var(--primary) / 0.15);
-    --shadow-tree-node: 0 2px 12px -2px hsl(var(--primary) / 0.2);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --foreground: 222.2 47.4% 11.2%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 47.4% 11.2%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 263 85% 75%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --primary-glow: 263 85% 85%;
-
-    --secondary: 263 25% 20%;
-    --secondary-foreground: 263 85% 75%;
-
-    --muted: 263 25% 20%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 320 85% 75%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 263 25% 20%;
-    --input: 263 25% 20%;
-    --ring: 263 85% 75%;
-
-    /* Beautiful gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(263 85% 75%), hsl(320 85% 75%), hsl(45 100% 80%));
-    --gradient-card: linear-gradient(145deg, hsl(222.2 84% 4.9%), hsl(263 25% 8%));
-    
-    /* Dark mode shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
-
-    /* Dark mode family tree tokens */
-    --family-male: 210 75% 65%;
-    --family-female: 315 75% 75%;
-    --family-unknown: 40 10% 75%;
-    --family-connection: 25 25% 85%;
-    --family-paternal: 210 45% 55%;
-    --family-maternal: 315 45% 55%;
-    
-    --gradient-family: linear-gradient(135deg, hsl(var(--family-paternal)), hsl(var(--family-maternal)));
-    --gradient-warm: linear-gradient(135deg, hsl(25 25% 22%), hsl(25 20% 18%));
-    
-    --shadow-family-card: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
-    --shadow-tree-node: 0 2px 12px -2px hsl(0 0% 0% / 0.5);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    margin: 0;
   }
 }
