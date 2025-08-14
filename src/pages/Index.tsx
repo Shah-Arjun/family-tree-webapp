@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FamilyMember } from '@/types/family';
 import { mockFamilyMembers, mockTreeData } from '@/data/mockFamily';
 import { Navigation } from '@/components/Navigation';
-import FamilyTree from "@/components/FamilyTree";
+import {FamilyTree} from "@/components/FamilyTree";
 import { MembersList } from '@/components/MembersList';
 import { AddMemberForm } from '@/components/AddMemberForm';
 
