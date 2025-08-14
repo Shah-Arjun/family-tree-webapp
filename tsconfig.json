@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
-    "moduleResolution": "bundler", 
-    "module": "ESNext",
     "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
+    "strict": true,
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
     },
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
-    "allowJs": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false
-  }
+    "outDir": "build",   // <--- ADD THIS
+    "noEmit": true       // <--- Prevents TS from writing JS files during dev
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
