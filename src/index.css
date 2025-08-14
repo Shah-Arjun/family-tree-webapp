@@ -7,7 +7,8 @@ All colors MUST be HSL.
 */
 
 body {
-  @apply bg-gray-50 text-gray-800;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
 @layer base {
